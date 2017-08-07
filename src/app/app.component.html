@@ -1,0 +1,17 @@
+<section class="employeeapp">
+  <header class="header">
+    <h1>Employee Information</h1>
+    <input class="employee-class" placeholder="Add an employee" autofocus="" [(ngModel)]="newEmployee.employeeName" (keyup.enter)="addEmployee()">
+  </header>
+  <section class="main">
+    <ul>
+      <li *ngFor="let employee of employeeService.employeeInstances">
+        <div class="view">
+			Employee Id: <label>{{employee.employeeId}}</label>
+          || Employee Name: <label>{{employee.employeeName}}</label>
+          <button (click)="deleteEmployee(employee)">Delete this</button>
+        </div>
+      </li>
+    </ul>
+  </section>
+</section>
